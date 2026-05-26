@@ -2,6 +2,17 @@
 
 A Vite + React + TanStack Start dashboard application with Tailwind CSS and Radix UI components.
 
+
+
+
+<img width="1918" height="951" alt="image" src="https://github.com/user-attachments/assets/e6c77bb9-96cb-4f45-856f-e651276923ba" />
+
+<img width="1919" height="952" alt="image" src="https://github.com/user-attachments/assets/954e1e6f-558b-4711-a353-df3187c2eecc" />
+
+<img width="1916" height="949" alt="image" src="https://github.com/user-attachments/assets/0e20c4f1-2f86-4ca2-81b2-39bd45551fd2" />
+
+
+
 ## What this project is
 
 - A modern React app bootstrapped for server-side rendering and static build using `@tanstack/react-start`.
@@ -81,3 +92,7 @@ npm run preview
 - `tsconfig.json` – TypeScript config.
 - `eslint.config.js` – lint rules.
 - `vite.config.ts` – Vite and TanStack Start configuration.
+
+
+
+
