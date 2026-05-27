@@ -24,3 +24,7 @@ export async function fetchAllOffers(): Promise<OfferApi[]> {
 export async function acceptOffer(id: string): Promise<void> {
   await patch<void>(`/api/offers/${id}/accept`);
 }
+
+export async function declineOffer(id: string): Promise<void> {
+  await patch<void>(`/api/offers/${id}/decline`);
+}
