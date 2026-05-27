@@ -46,3 +46,6 @@ export interface PendingOffersApiResponse {
   count: number;
   data: PendingOfferApi[];
 }
+
+export type OfferApi = PendingOfferApi;
+export type OffersApiResponse = PendingOffersApiResponse;
