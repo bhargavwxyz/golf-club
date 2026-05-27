@@ -16,3 +16,25 @@ export interface AnalyticsKpisResponse {
     avg_response_time_minutes: AnalyticsKpiMetric;
   };
 }
+
+// New funnel types
+export interface FunnelRow {
+  id: string;
+  label: string;
+  value: number;
+  percent: number;
+}
+
+export interface FunnelConversions {
+  click_to_offer: string;
+  offer_to_accepted: string;
+}
+
+export interface AnalyticsFunnelResponse {
+  ok: true;
+  data: {
+    period: string;
+    rows: FunnelRow[];
+    conversions: FunnelConversions;
+  };
+}

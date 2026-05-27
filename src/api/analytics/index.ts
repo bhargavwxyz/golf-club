@@ -1,2 +1,8 @@
-export { fetchKpis } from "./requests";
-export type { AnalyticsKpisResponse, AnalyticsKpiMetric } from "./types";
+export { fetchKpis, fetchFunnel } from "./requests";
+export type { 
+  AnalyticsKpisResponse, 
+  AnalyticsKpiMetric,
+  AnalyticsFunnelResponse,
+  FunnelRow,
+  FunnelConversions
+} from "./types";

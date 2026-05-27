@@ -49,3 +49,32 @@ export interface PendingOffersApiResponse {
 
 export type OfferApi = PendingOfferApi;
 export type OffersApiResponse = PendingOffersApiResponse;
+
+// New counter offer types
+export interface CounterOfferResponse {
+  ok: true;
+  data: {
+    lastErrorObject: {
+      n: number;
+      updatedExisting: boolean;
+    };
+    value: OfferApi;
+    ok: number;
+    $clusterTime: {
+      clusterTime: {
+        $timestamp: string;
+      };
+      signature: {
+        hash: string;
+        keyId: {
+          low: number;
+          high: number;
+          unsigned: boolean;
+        };
+      };
+    };
+    operationTime: {
+      $timestamp: string;
+    };
+  };
+}

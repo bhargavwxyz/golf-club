@@ -25,9 +25,10 @@ function ActionIcon({ action }: { action: "accepted" | "declined" | "counter sen
   );
 }
 
-function getActionType(status: string): "accepted" | "declined" | "counter sent" {
+function getActionType(status: string): "accepted" | "declined" | "counter sent" | "pending" {
   if (status === "Accepted") return "accepted";
-  if (status === "Declined") return "declined";
+  if (status === "Accepted") return "accepted";
+  if (status === "Pending") return "pending";
   return "counter sent";
 }
 
