@@ -35,8 +35,8 @@ function OffersPage() {
               {/* Pending Offers */}
               <PendingOffersTable />
 
-              {/* Bottom Grid */}
-              <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+              {/* Recent Activity + Offer Funnel — side by side */}
+              <div className="grid grid-cols-2 gap-6">
                 <RecentActivityCard />
                 <OfferFunnel />
               </div>
