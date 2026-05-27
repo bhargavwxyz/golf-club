@@ -71,13 +71,16 @@ export function PendingOffersTable() {
   const acceptMutation = useMutation({
     mutationFn: (id: string) => acceptOffer(id),
     onSuccess: (_, id) => {
+      // Remove from pendingOffers cache
       queryClient.setQueryData(["pendingOffers"], (oldData: PendingOfferApi[] | undefined) => {
         if (!oldData) return [];
         return oldData.filter((offer) => offer._id !== id);
       });
       
+      // Invalidate allOffers to refresh RecentActivity and ViewAllOffers
       queryClient.invalidateQueries({ queryKey: ["allOffers"] });
       queryClient.invalidateQueries({ queryKey: ["analyticsKpis"] });
+      queryClient.invalidateQueries({ queryKey: ["analyticsFunnel"] });
     },
     onError: (err) => {
       console.error("Accept error:", err);
@@ -87,13 +90,16 @@ export function PendingOffersTable() {
   const declineMutation = useMutation({
     mutationFn: (id: string) => declineOffer(id),
     onSuccess: (_, id) => {
+      // Remove from pendingOffers cache
       queryClient.setQueryData(["pendingOffers"], (oldData: PendingOfferApi[] | undefined) => {
         if (!oldData) return [];
         return oldData.filter((offer) => offer._id !== id);
       });
       
+      // Invalidate allOffers to refresh RecentActivity and ViewAllOffers
       queryClient.invalidateQueries({ queryKey: ["allOffers"] });
       queryClient.invalidateQueries({ queryKey: ["analyticsKpis"] });
+      queryClient.invalidateQueries({ queryKey: ["analyticsFunnel"] });
     },
     onError: (err) => {
       console.error("Decline error:", err);
@@ -208,7 +214,7 @@ export function PendingOffersTable() {
                 <th className="px-3 py-2 text-left text-[9px] font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap">OFFER</th>
                 <th className="px-3 py-2 text-left text-[9px] font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap">STATUS</th>
                 <th className="px-4 py-2 text-right text-[9px] font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap">ACTIONS</th>
-               </tr>
+              </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {pendingOffers.length === 0 ? (

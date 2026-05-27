@@ -8,6 +8,7 @@ export function OfferFunnel() {
     queryFn: fetchFunnel,
     staleTime: 5 * 60 * 1000,
     refetchOnWindowFocus: false,
+    refetchInterval: 30000, // Auto-refresh every 30 seconds
   });
 
   // Define bar colors for each row
