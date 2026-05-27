@@ -75,7 +75,7 @@ export function RecentActivityCard() {
         <div className="border-b border-slate-100 px-5 py-3">
           <h3 className="text-sm font-semibold text-slate-900">Recent Activity</h3>
         </div>
-        <div className="px-5 py-8 text-center text-sm text-slate-500">Loading recent activity from the offers API…</div>
+        <div className="px-5 py-8 text-center text-sm text-slate-500">Loading recent activity …</div>
       </section>
     );
   }
